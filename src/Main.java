@@ -17,7 +17,7 @@ public class Main {
         System.out.println("--------------------------------");
 
         System.out.println("BFS:");
-        Search<String> bfs = new BreadthFirstSearch<>(graph, "Almaty");
+        Search<String> bfs = new BreadthFirstSearch<>(weightedGraph, "Almaty");
         outputPath(bfs, "Kyzylorda");
     }
 

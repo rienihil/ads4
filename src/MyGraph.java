@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 public class MyGraph<V> {
-    private boolean undirected;
-    private Map<V, Vertex<V>> map;
+    protected boolean undirected;
+    protected Map<V, Vertex<V>> map;
 
     public MyGraph(boolean undirected){
         this.map = new HashMap<>();

@@ -1,10 +1,8 @@
 import java.util.*;
 
 public class BreadthFirstSearch<V> extends Search<V>{
-    private MyGraph<V> graph;
     public BreadthFirstSearch(MyGraph<V> graph, V data){
-        super(graph.getVertex(data));
-        this.graph=graph;
+        super(graph,graph.getVertex(data));
         bfs(start);
     }
 
@@ -22,10 +20,5 @@ public class BreadthFirstSearch<V> extends Search<V>{
                 }
             }
         }
-    }
-
-    public Iterable<V> pathTo(V data) {
-        Vertex<V> vertex = graph.getVertex(data);
-        return super.pathTo(vertex);
     }
 }

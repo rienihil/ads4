@@ -1,11 +1,13 @@
 import java.util.*;
 
 public class Search<V> {
+    protected MyGraph<V> graph;
     protected Set<Vertex<V>> visited;
     protected Map<Vertex<V>, Vertex<V>> edgeTo;
     protected Vertex<V> start;
 
-    public Search(Vertex<V> start){
+    public Search(MyGraph<V> graph, Vertex<V> start){
+        this.graph=graph;
         this.visited = new HashSet<>();
         this.edgeTo = new HashMap<>();
         this.start=start;
@@ -15,7 +17,8 @@ public class Search<V> {
         return visited.contains(vertex);
     }
 
-    public Iterable<V> pathTo(Vertex<V> vertex){
+    public Iterable<V> pathTo(V data){
+        Vertex<V> vertex = graph.getVertex(data);
         if (!hasPathTo(vertex)){
             return null;
         }

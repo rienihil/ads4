@@ -1,21 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class WeightedGraph<V>{
-    private boolean undirected;
-    private Map<V, Vertex<V>> map;
-
+public class WeightedGraph<V> extends MyGraph<V>{
     public WeightedGraph(boolean undirected){
-        this.undirected=undirected;
-        this.map = new HashMap<>();
-    }
-
-    public void addVertex(V data){
-        map.put(data, new Vertex<>(data));
-    }
-
-    public void addVertex(V data, Vertex<V> vertex){
-        map.put(data, vertex);
+        super(undirected);
     }
 
     public void addEdge(V source, V dest, double weight){
@@ -33,9 +21,6 @@ public class WeightedGraph<V>{
         if (undirected){
             destV.addAdjacentVertices(sourceV, weight);
         }
-    }
-    public Vertex<V> getVertex(V data){
-        return map.get(data);
     }
 }
 
